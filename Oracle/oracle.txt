@@ -1,0 +1,2 @@
+1.get all the object of the current user in oracle DB
+select 'drop '||object_type||' '||object_name||';' from (select uo.object_name,uo.object_type from user_objects uo where uo.object_type not in('INDEX','LOB') order by uo.object_type desc);
