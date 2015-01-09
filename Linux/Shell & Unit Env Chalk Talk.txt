@@ -1,0 +1,51 @@
+﻿1.设置ps1
+
+# .bashrc
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+        . /etc/bashrc
+fi
+PS1=`echo '[\033[1;35m\u\033[0m'"@"'\033[0;31m\h\033[0m''\033[0;32m\w\033[0m]'``echo "\n> "`
+# background is black
+#export PS1='\[\e]2;\u@\H \w\a\e[32;40m\]${USER}@${HOSTNAME}: ${PWD}\n\[\e[31;1m\]${?#0}\[\e[0m\]>' 
+
+2.设置窗口的title（避免多窗口混淆）
+mytitle="Some title"
+echo -e '\033]2;'$mytitle'\007'
+
+3.show space avaliable:
+df -h <path>
+
+4.show space used:
+du -hs <path>
+
+5.go to previous path: (pervious path will be kept in $OLDPEWD)
+cd -
+cd $OLDPEWD
+
+6.go to home path:
+cd 
+cd ~
+
+7. check login info:
+id
+
+8.后台任务
+ctrl+z： 将前台正在执行的任务放入后台，并处于暂停状态。
+jobs ：  查看当前有多少在后台运行
+jobs -l： 选项可显示所有任务的PID
+fg： 将后台中的命令调至前台运行
+bg： 将一个在后台暂停的命令，变成继续执行 （后台执行）
+&： 加在一个命令的最后，可以把这个命令放到后台执行 ,如sh start.sh &
+
+9.shotcuts for command edit
+ctrl+a ctrl+e : moves the cursor to the beginning/end  of the command line
+ctrl+k ctrl+u : delete strings after/before cursor
+ctrl+r : reverse search string in history commands
+
+10.sort file | uniq
+removes duplicate lines from a sorted file
+
+11.cut -d ' ' -f1,2 /etc/mtab
+
+12.find . -name ‘*.jar’ | xargs -pl ls -l 
