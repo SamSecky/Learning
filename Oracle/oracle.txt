@@ -1,2 +1,11 @@
 1.get all the object of the current user in oracle DB
 select 'drop '||object_type||' '||object_name||';' from (select uo.object_name,uo.object_type from user_objects uo where uo.object_type not in('INDEX','LOB') order by uo.object_type desc);
+
+
+2. 导出数据库 
+exp USERID=cst/r6oN1R@PSTU4 FILE=cst.dump INDEXES=y CONSISTENT=y ROWS=n GRANTS=y direct=y STATISTICS=none  LOG=export.log
+
+
+3. 导入数据库
+imp USERID=cst/banana1@CLOUDAPP FILE=cst.dump  ROWS=n GRANTS=y STATISTICS=none  LOG=export.log IGNORE=y FROMUSER=cst TOUSER=cst
+
