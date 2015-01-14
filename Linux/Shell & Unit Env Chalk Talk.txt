@@ -49,3 +49,24 @@ removes duplicate lines from a sorted file
 11.cut -d ' ' -f1,2 /etc/mtab
 
 12.find . -name ‘*.jar’ | xargs -pl ls -l 
+
+13.创建多层目录：  mkdir -p Project/a/src
+mkdir -p Project/{a,b,c,d}/src
+
+14.
+$# 是传给脚本的参数个数
+$0 是脚本本身的名字
+$1 是传递给该shell脚本的第一个参数
+$2 是传递给该shell脚本的第二个参数
+$@ 是传给脚本的所有参数的列表
+$* 是以一个单字符串显示所有向脚本传递的参数，与位置变量不同，参数可超过9个
+$$ 是脚本运行的当前进程ID号
+$? 是显示最后命令的退出状态，0表示没有错误，其他表示有错误
+exit -1 退出码为-1
+
+15.ln [options] source dist
+-s 软链接
+
+16.当前目录下 不是txt的文件移到ln
+ find -maxdepth 1 -not -name  "*.txt" -not -name "ln" | awk '{print $1}END{print "ln"}'| xargs mv
+
