@@ -70,3 +70,10 @@ exit -1 退出码为-1
 16.当前目录下 不是txt的文件移到ln
  find -maxdepth 1 -not -name  "*.txt" -not -name "ln" | awk '{print $1}END{print "ln"}'| xargs mv
 
+
+17 if语句
+if [[ $1 != "dev"  && $1 != "uat" || $1 = "prod" ]]
+then
+   echo "Wrong environment value."
+   exit -1
+fi
