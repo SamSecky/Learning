@@ -1,0 +1,4 @@
+using Jacoco in Sonar since Cobertura doesn’t support 
+
+
+EclEmma plugin for eclipse for your test coverage locally
