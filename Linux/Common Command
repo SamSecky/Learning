@@ -1,0 +1,65 @@
+1. replace:
+sed 's/ABC/abc/' filename 把ABC换成abc，输出结果到标准输出 （原文件不变） 每一行第一次出现
+sed -i 's/ABC/abc/' filename ABC换成abc 修改原文件
+sed 's/ABC/abc/g' filename
+sed -i '$d' filename 删除file最后一行 
+
+2. 切割文件
+cut -d ',' -f 2,3 filename 把file以“，”为分隔符， 切割出第2，3列
+
+3.awk 打印文件内容
+awk '{print $0" end"}' filename 把file打出来并每行在后面加一个“ end”
+awk '{print NR,$0}' filename 把file每行打出来并在前面加个行号
+awk 把每一个换行符结束的行称为一个记录 记录符默认：回车
+每个记录中域的默认分隔符为空格。 可以用-F来制定       -F':'以：为分隔符
+
+4. 查看
+cat filename > outputfule    输出到新文件，如果存在覆盖
+cat filename >> outputfule   输出到文件，如果存在append
+tail/head
+less   (shift + > 最后一屏幕)
+	   (shift + < 最前一屏幕)
+	   [pageup] [pagedown]翻页
+
+5.进程
+ps -ef
+ps -fu
+
+6.ln -s existfile newfile
+创建软链接
+对符号文件进行读或写操作的时候，会转成对原文件的操作，但删除链接文件时，系统仅仅删除链接文件，而不删除源文件本身。
+
+7. 压缩
+zip -r myfile.zip ./* 把当前目录下所有文件和文件夹全部压缩成myfile.zip
+-r表示递归压缩目录下所有文件
+zip -m myfile.zip ./test.txt 向myfile.zip中加入test.txt文件
+unzip -l myfile.zip 查看zip包下的内容
+unzip myfile.zip 解压缩
+unzip myfile.zip -d /test 解压缩文件到test目录下
+
+tar
+-c:建立压缩档案
+-x：解压
+-t：查看内容
+-r：向压缩归档文件末尾追加文件
+-u：更新原压缩包中的文件
+可选参数
+-v：显示所有过程
+-z ：是否同时具有 gzip 的属性？亦即是否需要用 gzip 压缩或解压？ 一般格式为xx.tar.gz或xx. tgz
+-j ：是否同时具有 bzip2 的属性？亦即是否需要用 bzip2 压缩或解压？一般格式为xx.tar.bz2  
+
+tar -tvf myfile.tar 查看tar包里的文件
+tar -cvf myfile.tar test/* 将 test 目录下的所有文件打包成myfile.tar（包括子文件夹以及下面的所有文件） 
+tar -xvf myfile.tar -C target/ 将myfile包解压缩到target目录下
+
+
+
+
+
+
+
+
+
+
+
+
