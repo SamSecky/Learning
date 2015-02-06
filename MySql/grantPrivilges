@@ -1,3 +1,5 @@
 update user set host = ’%’ where user = ’root’;
 grant all privileges  on *.* to root@'%' identified by "passwd" WITH GRANT OPTION;;
 flush privileges;
+
+bind_address需要修改 不能帮定本地127.0.0.1
