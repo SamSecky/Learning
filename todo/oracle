@@ -2,3 +2,4 @@ oracle 支持正则表达式
 两次query的cache
 two phase commit
 oracle的索引
+需要看看oracle方面的书

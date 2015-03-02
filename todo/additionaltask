@@ -1,0 +1,4 @@
+6.	For code re-design/refactoring, please make sure to work together with the author when missing functional test to have the functional test first.
+
+I would like to check if current ETL process can take advantage of JDK 8 Stream API or SCALA (something like this https://github.com/lbruand/freetle or we write one ourselves) to build a more general ETL API or library.
+http://www.dimroc.com/2014/09/29/etl-language-showdown/
