@@ -4,9 +4,10 @@ gg 回到开始的地方
 shift + g 回到末尾
 shift + a 行末附加
 $ 到当前行末尾
-^ 到当前行头部
-u 撤销前一条命令执行
-ctrl + r 重做（取消撤销）
+^ 到当前行的头部
+0 到当前行的头部
+u undo撤销前一条命令执行
+ctrl + r redo重做（取消撤销）
 . 重复最后一条修改的命令
 dw 删除一个word
 dd 删除一行
@@ -26,5 +27,20 @@ shift + zz 保存退出
 - 前一行行首
 shift + 后一行行首
 
+查找：
 / 输入关键字进行搜索           按n可以查找下一个，shift + n 可以查找上一个结果
+/pattern 查找pattern匹配的位置
+n 定位到下一个匹配的位置
+N 定位到前一个匹配的位置
+?pattern 与/pattern相反，它是反向查找的，同样的n和N的定位方向也是相反的。
+注意pattern为正则表达式，但与java里面的有些不一样。比如()不是元字符，\(\)才是。
 
+替换：
+下面是常用的替换命令：
+:%s/pattern/replace/g 将符合pattern模式的所有字符串替换为replace，如 :%s/123/456/g
+:n,m/pattern/replace/g 将符合pattern模式的所有字符串替换为replace，但只对从n到m行之间的替换。
+注意%s相当于1,$，即从第1到最后一行。
+
+Ctrl+c 块操作
+
+useful link： http://coolshell.cn/articles/5426.html
