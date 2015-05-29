@@ -2,3 +2,26 @@ Learning url: http://codingstandards.iteye.com/category/126457?page=2
 1 冒号 （啥也不做，只起到占位符的作用）
 :>file1.txt 清除
 
+批量操作文件
+for i in *.bak; do cp $1 ${i%.bak}; done; 复制当前文件下所有.bak结尾文件，并把 文件名截去.bak的结尾
+
+shell中截取字符串的方法有很多中，
+${expression}一共有9种使用方法。
+用来进行缺省值的替换
+${ varname :- word }
+如果varname存在并且不为null，返回varname的值，否则返回word。用于当某个变量不存在或没定义时返回一个缺省的值。
+如果为${ varname - word } ，则当varname存在，可以为null，例如我们定义myparam=，返回varname的值，否则返回word。下面也可以删除“：”,含义相同，不在复述。
+${ varname := word }
+如果varname存在并且不为null，返回varname的值，否则向其赋值为word，并返回该值。用于对某个不存在或没定义变量设置缺省。对于位置参数是只读不能赋值。
+${ varname :? message }
+如果varname存在并且不为null，返回varname的值，否则打印信息varname:message，并abort脚本，如果我们没有设置message，将使用缺省的“parameter null or not set”。
+用于检查变量没有定义的错误。
+${ varname :+ word }
+如果varname存在并且不为null，返回word的值，否则返回null。用于检测变量是否存在。
+获得字符串的长度
+${#parameter}
+字符串截取
+${parameter%word} 最小限度从后面截去word
+${parameter%%word} 最大限度从后面截去word
+${parameter#word} 最小限度从前面截去word
+${parameter##word} 最大限度从前面截去word
