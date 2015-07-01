@@ -1,0 +1,5 @@
+1.ALTER TABLE:
+	alter table
+	   cust_table
+	add
+	   cust_sex  varchar2(1) NOT NULL;
