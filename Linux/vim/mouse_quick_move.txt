@@ -1,0 +1,21 @@
+Ctrl + f // Move a screen forward 
+Ctrl + b // Move a screen backward
+Ctrl + d // Move half a screen forward
+Ctrl + u // Move half a screen backward
+
+Ctrl + e // scroll one line up 
+Ctrl + y // scroll one line down
+
+// Location the Cursor
+z + Enter    // Locate current line on the top of the screen
+100z + Enter // Locate below 100th line on the top of current screen
+z.           // Locate current line in middle of the screen
+z-           // Locate current line on the bottom of the screen
+
+100G    // go to line 100
+
+mqq     // mark current position
+`qq     // go back to marked position
+'qq     // go back to head of the marked line
+100G    // go to line 100
+

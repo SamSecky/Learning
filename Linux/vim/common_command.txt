@@ -45,3 +45,9 @@ Ctrl+c 块操作
 
 useful link： http://coolshell.cn/articles/5426.html
 
+
+
+在命令行模式下：
+6,9 co 12  复制6到9行内容到12行后面
+6,9 m 12  剪切6到9行内容到12行后面
+
